@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap Material CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+        <!-- Material Icon -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- Custom Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="../static/css/config_file.css">
+
+        <!-- Awesome font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Animation CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+        <title>Config file generator</title>
+    </head>
+
+    <body class="config_container">
+    <div id="vue-dashboard">
+
+        <h2>Pegasus Configuration file generator</h2>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col">
+                        File name
+                    </div>
+
+                    <div class="col">
+                        <input type="text" name="config_file_name" class="form-control" v-model="all_outputs.file_name" value="default">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDataDirectory
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row config_container">
+            <div class="col">
+                <h3>
+                    Default Parameters
+                </h3>
+            </div>
+        </div>
+
+        <div class="row config_container">
+            <div class="col config_container">
+                <h4> Micro </h4>
+
+                <!-- Default Micro parameters -->
+                <div class="row">
+                    <div class="col">
+                        CreateCscAcqEnt:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_CreateCscAcqEnt" class="form-control" v-model="all_outputs.micros.s_CreateCscAcqEnt" placeholder="AcqSystem1">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetAcqEntProcessingEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetAcqEntProcessingEnabled" class="form-control" v-model="all_outputs.micros.s_SetAcqEntProcessingEnabled" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetChannelNumber:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetChannelNumber" class="form-control" v-model="all_outputs.micros.s_SetChannelNumber" placeholder="auto increment">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetAcqEntReference:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetAcqEntReference" class="form-control" v-model="all_outputs.micros.s_SetAcqEntReference" placeholder="192">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        SetInputRange:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetInputRange" class="form-control" v-model="all_outputs.micros.s_SetInputRange" placeholder="1000">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspLowCutFilterEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspLowCutFilterEnabled" class="form-control" v-model="all_outputs.micros.s_SetDspLowCutFilterEnabled" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspLowCutFrequency:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspLowCutFrequency" class="form-control" v-model="all_outputs.micros.s_SetDspLowCutFrequency" placeholder="300">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspLowCutNumberTaps:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspLowCutNumberTaps" class="form-control" v-model="all_outputs.micros.s_SetDspLowCutNumberTaps" placeholder="256">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspHighCutFilterEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspHighCutFilterEnabled" class="form-control" v-model="all_outputs.micros.s_SetDspHighCutFilterEnabled" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspHighCutFrequency:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspHighCutFrequency" class="form-control" v-model="all_outputs.micros.s_SetDspHighCutFrequency" placeholder="6000">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspHighCutNumberTaps:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspHighCutNumberTaps" class="form-control" v-model="all_outputs.micros.s_SetDspHighCutNumberTaps" placeholder="256">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetSubSamplingInterleave:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetSubSamplingInterleave" class="form-control" v-model="all_outputs.micros.s_SetSubSamplingInterleave" placeholder="1">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetInputInverted:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetInputInverted" class="form-control" v-model="all_outputs.micros.s_SetInputInverted" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetNetComDataBufferingEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetNetComDataBufferingEnabled" class="form-control" v-model="all_outputs.micros.s_SetNetComDataBufferingEnabled" placeholder="False">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetNetComDataBufferSize:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetNetComDataBufferSize" class="form-control" v-model="all_outputs.micros.s_SetNetComDataBufferSize" placeholder="3000">
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <h5> Add Channels: </h5>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                Channel start name:
+                            </div>
+                            <div class="col">
+                                <input type="text" name="channel_name" class="form-control" v-model="micro_channel_name" placeholder="SAHipp-3Ld1">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                Number of channels:
+                            </div>
+                            <div class="col">
+                                <input type="text" name="s_SetNetComDataBufferSize" class="form-control" v-model="micro_n_channels" placeholder="16">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <button v-on:click="add_micro_channel()">Add Channel</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col config_container" style="overflow-y: scroll; height: 40rem; overflow-x: visible">
+                <h4> Output </h4>
+
+                <pre>
+                    {{ console_output }}
+                </pre>
+
+            </div>
+
+            <div class="col config_container">
+                <h4> Macros </h4>
+
+                <!-- Default Macros parameters -->
+                <div class="row">
+                    <div class="col">
+                        CreateCscAcqEnt:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_CreateCscAcqEnt" class="form-control" v-model="all_outputs.macros.CreateCscAcqEnt" placeholder="AcqSystem1">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetAcqEntProcessingEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetAcqEntProcessingEnabled" class="form-control" v-model="all_outputs.macros.SetAcqEntProcessingEnabled" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetChannelNumber:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetChannelNumber" class="form-control" v-model="all_outputs.macros.SetChannelNumber" placeholder="auto increment">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetAcqEntReference:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetAcqEntReference" class="form-control" v-model="all_outputs.macros.SetAcqEntReference" placeholder="32000000">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        SetInputRange:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetInputRange" class="form-control" v-model="all_outputs.macros.SetInputRange" placeholder="1000">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspLowCutFilterEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspLowCutFilterEnabled" class="form-control" v-model="all_outputs.macros.SetDspLowCutFilterEnabled" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspLowCutFrequency:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspLowCutFrequency" class="form-control" v-model="all_outputs.macros.SetDspLowCutFrequency" placeholder="0.1">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspLowCutNumberTaps:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspLowCutNumberTaps" class="form-control" v-model="all_outputs.macros.SetDspLowCutNumberTaps" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspHighCutFilterEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspHighCutFilterEnabled" class="form-control" v-model="all_outputs.macros.SetDspHighCutFilterEnabled" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspHighCutFrequency:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspHighCutFrequency" class="form-control" v-model="all_outputs.macros.SetDspHighCutFrequency" placeholder="500">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetDspHighCutNumberTaps:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetDspHighCutNumberTaps" class="form-control" v-model="all_outputs.macros.SetDspHighCutNumberTaps" placeholder="256">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetSubSamplingInterleave:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetSubSamplingInterleave" class="form-control" v-model="all_outputs.macros.SetSubSamplingInterleave" placeholder="16">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetInputInverted:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetInputInverted" class="form-control" v-model="all_outputs.macros.SetInputInverted" placeholder="True">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetNetComDataBufferingEnabled:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetNetComDataBufferingEnabled" class="form-control" v-model="all_outputs.macros.SetNetComDataBufferingEnabled" placeholder="False">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        SetNetComDataBufferSize:
+                    </div>
+                    <div class="col">
+                        <input type="text" name="s_SetNetComDataBufferSize" class="form-control" v-model="all_outputs.macros.SetNetComDataBufferSize" placeholder="3000">
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <h5> Add Channels: </h5>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                Channel start name:
+                            </div>
+                            <div class="col">
+                                <input type="text" name="channel_name" class="form-control" v-model="macro_channel_name" placeholder="Amg-1Ld1">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                Number of channels:
+                            </div>
+                            <div class="col">
+                                <input type="text" name="s_SetNetComDataBufferSize" class="form-control" v-model="macro_n_channels" placeholder="12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <button v-on:click="add_macro_channel()">Add Channel</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row config_container">
+            <button v-on:click="download_config_file()"> Download </button>
+        </div>
+
+    </div>
+    <!-- End of dashboard -->
+
+
+    <br/>
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue"></script>
+
+    <!-- My code -->
+    <script> {% include 'js/config_files.js' %} </script>
+
+
+    </body>
+</html>
