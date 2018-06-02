@@ -7,6 +7,7 @@ def generate_config_file(data):
     """
     cfg_file_path = "./cfg_file.cfg"
     template_cfg_file = "./template_cfg_file.cfg"
+    template_cfg_end_file = "./template_end.cfg"
     channel_number = 0
 
     with open(template_cfg_file, "r") as template_file:
@@ -18,6 +19,13 @@ def generate_config_file(data):
 
     channel_number = add_macro_channels(data, cfg_file_path, channel_number)
     _ = add_micro_channels(data, cfg_file_path, channel_number)
+
+    with open(template_cfg_end_file, "r") as template_file:
+
+        template_content = template_file.read()
+
+        with open(cfg_file_path, "a") as cfg_file:
+            cfg_file.write(template_content)
 
     return cfg_file_path
 
