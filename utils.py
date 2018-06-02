@@ -59,7 +59,7 @@ def add_macro_channels(data, cfg_file_path, channel_number):
 def add_micro_channels(data, cfg_file_path, channel_number):
 
     with open(cfg_file_path, "a") as cfg_file:
-        macro_channels = data["macro_channels_added"]
+        macro_channels = data["micro_channels_added"]
 
         for k, v in macro_channels.items():
             for i in range(int(v)):
