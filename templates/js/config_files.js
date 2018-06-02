@@ -101,7 +101,16 @@ let vue_dashboard = new Vue({
             Add a micro or macro channel
              */
             this.all_outputs.micro_channels_added[this.micro_channel_name] = this.micro_n_channels;
-            this.output_to_console(this.micro_channel_name, this.micro_n_channels);
+            this.output_to_console(this.micro_channel_name, this.micro_n_channels, false);
+
+        },
+
+        undo_micro_channel: function () {
+            /*
+            Add a micro or macro channel
+             */
+            delete this.all_outputs.micro_channels_added[this.micro_channel_name];
+            this.output_to_console(this.micro_channel_name, this.micro_n_channels, true);
 
         },
 
@@ -110,14 +119,27 @@ let vue_dashboard = new Vue({
             Add a macro or macro channel
              */
             this.all_outputs.macro_channels_added[this.macro_channel_name] = this.macro_n_channels;
-            this.output_to_console(this.macro_channel_name, this.macro_n_channels);
+            this.output_to_console(this.macro_channel_name, this.macro_n_channels, false);
         },
 
-        output_to_console: function (channel_name, n_channels) {
+        undo_macro_channel: function () {
+            /*
+            Add a macro or macro channel
+             */
+            delete this.all_outputs.macro_channels_added[this.macro_channel_name];
+            this.output_to_console(this.macro_channel_name, this.macro_n_channels, true);
+        },
+
+        output_to_console: function (channel_name, n_channels, delete_ch) {
             /*
             Console ouput
              */
-            this.console_output += "\n" + "Channel added: " + channel_name + "  " + "n_channles: " + n_channels + "\n";
+            if (!delete_ch){
+                this.console_output += "\n" + "Channel added: " + channel_name + "  " + "n_channles: " + n_channels + "\n";
+            }
+            else {
+                this.console_output += "\n" + "Channel deleted: " + channel_name + "\n";
+            }
         }
     }
 

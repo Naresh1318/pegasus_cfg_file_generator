@@ -225,9 +225,14 @@
                         </div>
 
                         <div class="row">
-                            <button v-on:click="add_micro_channel()">Add Channel</button>
-                        </div>
+                            <div class="col-lg-4">
+                                <button v-on:click="add_micro_channel()">Add Channel</button>
+                            </div>
 
+                            <div class="col">
+                                <button v-on:click="undo_micro_channel()">Undo</button>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -411,7 +416,13 @@
                         </div>
 
                         <div class="row">
-                            <button v-on:click="add_macro_channel()">Add Channel</button>
+                            <div class="col-lg-4">
+                                <button v-on:click="add_macro_channel()">Add Channel</button>
+                            </div>
+
+                            <div class="col">
+                                <button v-on:click="undo_macro_channel()">Undo</button>
+                            </div>
                         </div>
 
                     </div>
