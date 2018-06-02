@@ -1,5 +1,4 @@
 
-
 def generate_config_file(data):
     """
     Generates a temporary CSV file that contains the data for the selected variable table name.
